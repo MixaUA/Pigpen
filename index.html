@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифратор Pigpen UA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#2d3748">
+    <link rel="apple-touch-icon" href="ico/apple-touch-icon.png">
+</head>
+<body>
+    <svg style="display: none;">
+        <defs>
+            <symbol id="base-1" viewBox="0 0 50 50"><polyline points="50,0 50,50 0,50" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-2" viewBox="0 0 50 50"><polyline points="0,0 0,50 50,50 50,0" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-3" viewBox="0 0 50 50"><polyline points="50,50 0,50 0,0" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-4" viewBox="0 0 50 50"><polyline points="0,0 50,0 50,50 0,50" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-5" viewBox="0 0 50 50"><rect x="0" y="0" width="50" height="50" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-6" viewBox="0 0 50 50"><polyline points="50,50 0,50 0,0 50,0" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-7" viewBox="0 0 50 50"><polyline points="0,0 50,0 50,50" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-8" viewBox="0 0 50 50"><polyline points="0,50 0,0 50,0 50,50" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-9" viewBox="0 0 50 50"><polyline points="50,0 0,0 0,50" fill="none" stroke="black" stroke-width="3"/></symbol>
+            <symbol id="base-unknown" viewBox="0 0 50 50"><rect x="0" y="0" width="50" height="50" fill="none" stroke="black" stroke-width="3" /></symbol>
+            <g id="dot"><circle cx="25" cy="25" r="4.5" fill="black"/></g>
+            <g id="sq"><rect x="18" y="18" width="14" height="14" fill="black"/></g>
+            <g id="tri"><polygon points="25,17 33,31 17,31" fill="black"/></g>
+        </defs>
+    </svg>
+
+    <div class="main-wrapper">
+        <img src="image/Pigpen.png" class="top-logo" alt="Pigpen">
+
+        <div class="visual-reference-container">
+            <div class="box-grid"><table class="pigpen-grid">
+                <tr><td><span class="char">А</span><button class="grid-btn" onclick="addChar('А')"></button></td><td><span class="char">Б</span><button class="grid-btn" onclick="addChar('Б')"></button></td><td><span class="char">В</span><button class="grid-btn" onclick="addChar('В')"></button></td></tr>
+                <tr><td><span class="char">Г</span><button class="grid-btn" onclick="addChar('Г')"></button></td><td><span class="char">Ґ</span><button class="grid-btn" onclick="addChar('Ґ')"></button></td><td><span class="char">Д</span><button class="grid-btn" onclick="addChar('Д')"></button></td></tr>
+                <tr><td><span class="char">Е</span><button class="grid-btn" onclick="addChar('Е')"></button></td><td><span class="char">Є</span><button class="grid-btn" onclick="addChar('Є')"></button></td><td><span class="char">Ж</span><button class="grid-btn" onclick="addChar('Ж')"></button></td></tr>
+            </table></div>
+            <div class="box-grid"><table class="pigpen-grid">
+                <tr><td><span class="char">З</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('З')"></button></td><td><span class="char">И</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('И')"></button></td><td><span class="char">І</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('І')"></button></td></tr>
+                <tr><td><span class="char">Ї</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('Ї')"></button></td><td><span class="char">Й</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('Й')"></button></td><td><span class="char">К</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('К')"></button></td></tr>
+                <tr><td><span class="char">Л</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('Л')"></button></td><td><span class="char">М</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('М')"></button></td><td><span class="char">Н</span><svg class="overlay-svg"><use href="#dot"/></svg><button class="grid-btn" onclick="addChar('Н')"></button></td></tr>
+            </table></div>
+            <div class="box-grid"><table class="pigpen-grid">
+                <tr><td><span class="char">О</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('О')"></button></td><td><span class="char">П</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('П')"></button></td><td><span class="char">Р</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('Р')"></button></td></tr>
+                <tr><td><span class="char">С</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('С')"></button></td><td><span class="char">Т</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('Т')"></button></td><td><span class="char">У</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('У')"></button></td></tr>
+                <tr><td><span class="char">Ф</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('Ф')"></button></td><td><span class="char">Х</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('Х')"></button></td><td><span class="char">Ц</span><svg class="overlay-svg"><use href="#sq"/></svg><button class="grid-btn" onclick="addChar('Ц')"></button></td></tr>
+            </table></div>
+            <div class="box-grid"><table class="pigpen-grid">
+                <tr><td><span class="char">Ч</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('Ч')"></button></td><td><span class="char">Ш</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('Ш')"></button></td><td><span class="char">Щ</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('Щ')"></button></td></tr>
+                <tr><td><span class="char">Ь</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('Ь')"></button></td><td><span class="char">Ю</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('Ю')"></button></td><td><span class="char">Я</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('Я')"></button></td></tr>
+                <tr><td><span class="char">.</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar('.')"></button></td><td><span class="char">,</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar(',')"></button></td><td><span class="char">␣</span><svg class="overlay-svg"><use href="#tri"/></svg><button class="grid-btn" onclick="addChar(' ')"></button></td></tr>
+            </table></div>
+        </div>
+
+        <div class="encoder-container">
+            <div class="size-control">
+                <span>Розмір символів:</span>
+                <input type="range" id="sizeSlider" min="15" max="34" value="34" oninput="updateSize(this.value)">
+                <span id="sizeVal">34px</span>
+            </div>
+            
+            <label>Закодовано</label>
+            <div id="output"></div>
+            
+            <div class="field-group">
+                <label>Розкодовано</label>
+                <textarea id="input" placeholder="Введіть текст для кодування..."></textarea>
+            </div>
+            
+            <button class="btn-clear" onclick="clearAll()">Очистити все</button>
+        </div>
+
+        <div class="wiki-section">
+            <div class="wiki-divider"></div>
+            <div class="wiki-title">Як працює шифр Pigpen?</div>
+            <div class="wiki-content">
+                <p>
+                    <strong>Шифр Pigpen</strong> (також відомий як масонський шифр) — це простий 
+                    підстановочний шифр, який використовувався масонами у XVIII столітті для захисту своїх записів. 
+                    Назва "pigpen" (загон для свиней) походить від форми геометричних фігур, що нагадують загони.
+                </p>
+
+                <h4>Принцип роботи</h4>
+                <p>
+                    Кожна літера замінюється частиною геометричної фігури, в якій вона розташована. 
+                    Алфавіт ділиться на чотири групи по 9 літер, які розміщуються в різних сітках:
+                </p>
+                <ul>
+                    <li><strong>Перша сітка</strong> — базові форми (кути та лінії)</li>
+                    <li><strong>Друга сітка</strong> — форми з крапкою посередині</li>
+                    <li><strong>Третя сітка</strong> — форми з квадратом посередині</li>
+                    <li><strong>Четверта сітка</strong> — форми з трикутником посередині</li>
+                </ul>
+
+                <h4>Приклад кодування слова "ШИФРУВАННЯ"</h4>
+                <p>
+                    Розглянемо, як кожна літера перетворюється на символ:
+                </p>
+                <div class="example-grid">
+                    <div class="example-item">
+                        <span class="example-letter">Ш</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-2"/><use href="#tri"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">И</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-2"/><use href="#dot"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">Ф</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-7"/><use href="#sq"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">Р</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-3"/><use href="#sq"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">У</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-6"/><use href="#sq"/></svg>
+                    </div>
+                </div>
+                <div class="example-grid">
+                    <div class="example-item">
+                        <span class="example-letter">В</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-3"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">А</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-1"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">Н</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-9"/><use href="#dot"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">Н</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-9"/><use href="#dot"/></svg>
+                    </div>
+                    <div class="example-item">
+                        <span class="example-letter">Я</span>
+                        <svg class="example-symbol" viewBox="0 0 50 50"><use href="#base-6"/><use href="#tri"/></svg>
+                    </div>
+                </div>
+
+                <h4>Як користуватися програмою?</h4>
+                <p>
+                    <strong>Кодування:</strong> Введи текст у поле "Розкодовано" або натискай на літери в сітках вгорі. 
+                    Програма автоматично покаже закодовані символи у верхньому полі.
+                </p>
+                <p>
+                    <strong>Розкодування:</strong> Використовуй таблиці вгорі як довідник — знайди потрібний символ 
+                    і подивись, яка літера йому відповідає.
+                </p>
+                <p>
+                    <strong>Налаштування:</strong> Можна змінювати розмір символів за допомогою повзунка для 
+                    зручності перегляду.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="copyright-year">2025</span> Mykhailo Anisimov</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
